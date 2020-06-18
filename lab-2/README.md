@@ -10,7 +10,7 @@ FreeRTOS is a mini real-time operating system kernel. As a lightweight operating
 This task is achieving different frequency of LED flashing through freeRTOS.
 #### 1. Append Task
 Task should be added by `.ioc` file:  
-![tasks](https://tva1.sinaimg.cn/large/007S8ZIlly1gfwerpgr8lj30hk09174j.jpg)
+![tasks](https://tva1.sinaimg.cn/large/007S8ZIlly1gfwerpgr8lj30hk09174j.jpg)  
 From graph above, 2 tasks have been added to the project, then code will be generated automatically:
 ```C
 void StartDefaultTask(void *argument)
