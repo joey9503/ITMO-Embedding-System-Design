@@ -47,7 +47,7 @@ It is easy to find that the 2 tasks are running simultaneously.
     - It is a function starts the FreeRTOS scheduler running.
       Typically, before the scheduler has been started, `main()` (or a function called by `main()`) will be executing. After the scheduler has been started, only tasks and interrupts will ever execute.Starting the scheduler causes the highest priority task that was created while the scheduler was in the Initialization state to enter the Running state.
 4. Why do we need the `xTaskCreate()` function?
-    - Creates a new instance of a task.
+    - This function creates a new instance of a task.
       Each task requires RAM that is used to hold the task state (the task control block, or TCB), and used by the task as its stack. If a task is created using `xTaskCreate()` then the required RAM is automatically allocated from the FreeRTOS heap. If a task is created using `xTaskCreateStatic()` then the RAM is provided by the application writer, which results in two additional function parameters, but allows the RAM to be statically allocated at compile time. Newly created tasks are initially placed in the Ready state, but will immediately become the Running state task if there are no higher priority tasks that are able to run. Tasks can be created both before and after the scheduler has been started.
 
 ### Summary
