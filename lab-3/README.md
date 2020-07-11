@@ -10,7 +10,7 @@ Firstly, we should include head file and declare a `queue`:
 ...
 #include "queue.h"
 ...
-/* Declare a queue structure.*/
+/* Queue declaration */
 xQueueHandle q;
 ```
 Then, the queue is going to be initialized inside the `main()`:
@@ -19,7 +19,7 @@ Then, the queue is going to be initialized inside the `main()`:
 int main()
 {
  ...
- /* Queue initializtion*/
+ /* Queue initializtion */
  q = xQueueCreate(8, sizeof(unsigned int));
  ...   
 }
@@ -31,7 +31,7 @@ void StartDefaultTask(void)
     unsigned int data = 1;
     for (;;)
     {
-        /* Sending data. */
+        /* Sending data */
         xQueueSend(q, (void *)&data, portMAX_DELAY);
         osDelay(data*1000);
         ++data;
@@ -47,7 +47,7 @@ void StartTask02(void *argument)
         unsigned int rec;
         if (uxQueueMessagesWaiting(q)>1)
         {
-            /* Receiving data from task 1, stored into variable 'rec'*/
+            /* Receiving data from task 1, stored into variable 'rec' */
             xQueueReceive(q, &(rec), portMAX_DELAY);
             for (int i = 0; i <=rec; ++i)
             {
