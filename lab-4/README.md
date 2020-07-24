@@ -13,6 +13,7 @@ xQueueHandle q1;
 xQueueHandle q2;
 /* Definition of semaphore. */
 SemaphoreHandle_t xSemaphore;
+...
 ```
 <br></br>
 2. Initialization of `queue` and `semaphore`.
@@ -26,6 +27,7 @@ int main(void)
     ...
     /* There is only 1 LED so the maximum value of semaphore is 1. */
     xSemaphore = xSemaphoreCreateCounting(1, 1);
+    ...
 }
 ```
 <br></br>
